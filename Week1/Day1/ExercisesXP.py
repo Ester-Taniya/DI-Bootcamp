@@ -61,17 +61,34 @@ else: print("the number is odd ")
 
 
 
-#_______  Exercise 8 : What’s Your Name ?______
 
+
+#_______  Exercise 8 : What’s Your Name ?______
+user_name=str(input("what your name?"))
+
+short_name='Esty'
+long_name='Ester'
+
+if  user_name.capitalize() == short_name or long_name : # also we can use elif (but its not short way)
+    print("How cool , Two Esty ")
+else:  print("nooooo cool, IT'S NOT Tasty")
 
 # ____________________________
-#
-#
 
-#_______     ______
-#_______     ______
-#_______     ______
-#_______     ______
+
+
+
+#_______ Exercise 9 : Tall Enough To Ride A Roller Coaster ______
+
+user_height= float(input("wrigt yor height in inches:"))
+required_height=145                                         #(not not include, as I understand)
+if user_height>required_height:                             #145 its No , 145.1 its OK
+    print('You are tall enough to ride')
+else: print('You are need to grow some more to ride')
+# ____________________________
+
+
+
 
 
 
