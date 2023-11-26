@@ -92,3 +92,35 @@ else: print('You are need to grow some more to ride')
 
 
 
+
+
+
+
+#_______________Exercises XP Gold_________________________________________________________________________________________________________________________
+
+#_______Exercise 1 : Hello World-I Love Python _____
+
+print("Hellow World\n"*4,"I love python\n"*4)
+#_________________________
+
+
+
+
+#_______Exercise 2 : What Is The Season ? _____
+number=int(input("write a number of the month(from 1 to 12)"))
+
+while number <1 or number>12:
+    print('Ooops! That was wrong number, try again...')
+    number=int(input("write again (from 1 to 12)"))
+if number==3 or number==4 or number ==5:
+    print("this is Spring")
+elif number ==6 or number==7 or number==8:
+    print("this is Summer")
+elif number==9 or number==10 or number==11:
+    print("this is Autumn")
+else: print("this is Winter")
+#_________________________
+
+
+
+
