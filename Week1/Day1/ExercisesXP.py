@@ -124,3 +124,96 @@ else: print("this is Winter")
 
 
 
+
+
+
+
+
+
+
+
+
+#_______________Exercises XP Nija_________________________________________________________________________________________________________________________
+
+
+#_______ Exercise 1 : Use The Terminal   _______
+#The PATH variable in the operating system specifies where to find executable files.
+# When you enter a command, the system uses PATH to locate and run the required file, 
+#enabling the execution of commands like python3 from any directory in the terminal.
+#
+#_________________________
+
+
+
+
+
+#_______Exercise 2 : Alias    _______
+#An alias is a user-defined shortcut for a longer command
+#example:
+# '$ py'  for  '$ python3'
+
+
+#_________________________
+
+
+
+
+
+#_______ Exercise 3 : Outputs   _______
+    >>> 3 <= 3 < 9     #True 
+    >>> 3 == 3 == 3    #True
+    >>> bool(0)        #False
+    >>> bool(5 == "5")  #False
+    >>> bool(4 == 4) == bool("4" == "4")    #True
+    >>> bool(bool(None))    #False
+
+    x = (1 == True)
+    y = (1 == False)
+    a = True + 4
+    b = False + 10
+
+    print("x is", x)     #x is True
+    print("y is", y)    #y is False
+    print("a:", a)    #a: 5
+    print("b:", b)    #b: 10
+
+
+#_________________________
+
+
+
+
+#_______Exercise 4 : How Many Characters In A Sentence ?   _______
+my_text = """Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+           Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+           laboris nisi ut aliquip ex ea commodo consequat. 
+           Duis aute irure dolor in reprehenderit in voluptate velit 
+           esse cillum dolore eu fugiat nulla pariatur. 
+           Excepteur sint occaecat cupidatat non proident, 
+           sunt in culpa qui officia deserunt mollit anim id est laborum."""
+           
+print(f" In this sentence {len(my_text)} characters")
+#_________________________
+
+
+#_______Exercise 5: Longest Word Without A Specific Character _______
+
+
+text = str(input('Write the longest sentence you can without the character "A": '))
+character = 'A'
+
+if character not in text :  # if we also ban "a", need to add: "and character.lower()not in text"
+    print("Congratulations, you wrote it all without 'A'.")
+    
+else:
+    print('Sorry, try again.')
+    text = str(input('at this time write your sentence cerfuly: '))
+#_________________________
+
+
+
+
+
+
+
