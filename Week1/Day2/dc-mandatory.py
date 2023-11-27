@@ -69,3 +69,37 @@ inter=my_set.intersection(my_set2)
 print(inter)
 #dif=my_set.diference(my_set2)
 #print(dif) ???????
+
+
+
+
+
+#for loops
+students=['Lior','Sveta','Esty','David']
+
+for each_studens in students:
+    if each_studens is 'Sveta':
+        print("H-b day , Sveta")
+    print(f'hello, {each_students}')
+
+
+# for loop ex 
+usser_num=int(input('write numer'))
+for i in range(1,11):
+    print(i*usser_num)
+
+
+
+
+#while loop ex
+count=1
+while count <= 10:
+    print(count)
+    count += 1
+
+#######
+
+students=['Lior','Sveta','Esty','David']    
+for i,j in enumerate(students):
+    print(i,j)
+
