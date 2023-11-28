@@ -1,1 +1,101 @@
 
+'''
+all_top = []
+price = 10
+while True:#keep working until breake
+    topping = input("enter a pizza topping or 'q' to quit :").lower()
+
+    if topping == 'q':
+        print(f'you added {",".join(all_top)} to yor pizza and the price is {price}')
+
+        break
+    else: all_top.append(topping)
+    price +=2.5
+
+    print(f'{topping} was added to yor pizza')
+'''
+#_____________________________________________________________________________________
+'''
+usser_word="tttiiiilllee"
+output=usser_word[0]
+for i,char in enumerate(usser_word):
+    if i == 0:
+        continue
+    if usser_word[i]!= usser_word[i-1]:
+        output+=char
+print(output)
+'''
+#_____________________________________________________________________________________
+
+'''
+my_dict={'name':'rufus','age':}
+some_list=['Harry Potter',33,1.7]
+users= {'name':'Harry Potter',
+   'age':'33',
+   'higght':1.7,
+   "wizzard":True,
+   'house':'griffindor',
+   'hobies': ['quduch','flying cars','eating a chokollade]',
+   'besty':{'Hermione','Ron'},
+   'family':
+   {'name': 'Gina Weasly',
+    'age': 33},
+   'higght':1.65
+    }
+users['house']='sliserin' #to change  value
+print(users['house'])   
+
+del users ['higght'] # to delite
+
+print(users.keys())
+print(users.values())
+print(users.items())
+
+
+#---------------------------------------------------
+    
+    
+print (some{list[1]) # list
+#accesing data
+print(users['hobies'])
+#list
+print(users['hobies'])
+#set
+#
+'''
+#______________________________________________________________
+'''
+sample_dict = {
+   "class":{
+      "student":{
+         "name":"Mike",
+         "marks":{
+            "physics":70,
+            "history":80
+         }
+      }
+   }
+}
+'''
+'''
+#________Exercise
+#Delete set of keys from Python Dictionary
+
+sample_dict = {
+  "name": "Kelly",
+  "age":25,
+  "salary": 8000,
+  "city": "New york"
+
+}
+keys_to_remove = ["name", "salary"]
+for i in sample_dict:
+
+# Expected output: {'city': 'New york', 'age': 25}
+
+'''
+for item in enumerate('abcd'):
+  print(item)
+
+
+
