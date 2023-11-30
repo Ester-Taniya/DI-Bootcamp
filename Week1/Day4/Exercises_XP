@@ -1,1 +1,345 @@
+'''___Exercises XP____________________________________________________________________________________________________________________________________'''
+#____ Exercise 1 : What Are You Learning ?  _____
 
+def display_message():
+    sentence = "In this course I learning a Python language "
+    print(sentence)
+display_message()
+#__________________________________________
+
+
+
+
+#____Exercise 2: What’s Your Favorite Book __
+def favorite_book(title):
+    print(f' "One of my favorite books is  the "{title}"')
+
+favorite_book("The Hitchhiker's Guide to the Galaxy")
+#_________________________________________
+
+
+
+
+#____ Exercise 3 : Some Geography__
+
+def describe_city(city,country='Iceland'):
+    print(f" {city} is in {country}")
+describe_city ('Reykjavik')
+
+#__________________________
+
+
+#____Exercise 4 : Random__
+import random
+
+def random_func():
+    num1 = int(input("Please,  enter any number between 1 and 100: "))
+    num2 = random.randint(1, 100)
+    print(f'A your number is {num1}, other number is {num2}')
+    if num1 == num2:
+        print("Success")
+    else: print("Fail")
+random_func()
+#__________________________
+
+
+#____Exercise 4 : Random__
+import random
+
+def random_func():
+    num1 = int(input("Please,  enter any number between 1 and 100: "))
+    num2 = random.randint(1, 100)
+    print(f'A your number is {num1}, other number is {num2}')
+    if num1 == num2:
+        print("Success")
+    else: print("Fail")
+random_func()
+
+#__________________________
+
+
+
+#____ Exercise 5 : Let’s Create Some Personalized Shirts ! ___
+
+#1-3:
+def make_shirt():
+
+    size =str(input('Enter yor shirt size (S,M,L): ')).upper()
+    #also we cane write "wrong enter paramiters" (if it need)
+
+    text = str(input('Enter the text to print on yor shirt: '))
+
+    print(f'The size of the shirt is {size} and the text is "{text}".')
+make_shirt()
+
+
+#4
+def make_shirt(size='L',text = 'I love Python'):
+
+    print(f'The size of the shirt is {size} and the text is "{text}".')
+#5
+make_shirt()
+
+
+#6
+make_shirt(size= 'M')
+
+#7
+make_shirt( text= 'different message')
+
+#8 bonus:
+def make_shirt(**kwargs):
+    print(f'The size of the shirt is {kwargs["size"]} and the text is "{kwargs["text"]}".')
+
+make_shirt(size='S', text="keyword")
+#__________________________________
+
+
+
+
+#____ Exercise 6 : Magicians …! ___
+
+magician_names = ['Harry Houdini', 'David Blaine', 'Criss Angel']
+#using general list (inside functions)
+
+#1
+def show_magicians():
+    for name in magician_names:
+        print(name)
+show_magicians()
+
+#
+#2
+#this function do only changes in general list 
+
+def make_great():
+    for i in range(0,len(magician_names)):
+        magician_names[i] += (" the Great ")
+
+#3 : callthe function
+make_great()
+
+#4 to print changed names call function :
+show_magicians() 
+
+
+"""if don't  use   "show_magicians()function"  posible print(magician_names)""""
+
+
+
+#____  Exercise 7 : Temperature Advice __________
+import random
+
+#1
+def get_random_temp():
+   num = int(random.randint(-10,40))
+   #print(num) #/test expected results
+
+    #4
+   season = str(input("Enter name of season: ")).capitalize()
+   if season == "Winter":
+       num = int(random.randint(-10, 16))
+   elif season == "Fall":
+       num = int(random.randint(16, 23))
+   elif season == "Spring":
+       num = int(random.randint(24, 32))
+   elif season == "Summer":
+       num = int(random.randint(32, 40))
+
+   return (num)
+
+#2
+def main():
+
+    current_temp = get_random_temp()
+    print(f'The temperature right now is {current_temp} degrees Celsius.')
+    #3
+    if current_temp < 0:
+        print(f'Brrr, that’s freezing! Wear some extra layers today.')
+    elif current_temp in range(0,16):
+        print(f'Quite chilly! Don’t forget your coat!')
+    elif current_temp in range(16,23):
+        print(f'Much better! you CAN forget your coat.')
+        ###in this moment not clear: 'between 16 and 23( value:23  include or not? next range start with 24)
+    elif current_temp in range(24,32):
+        print(f'Amazing, enjoy this weather!!!')
+    elif current_temp in range(32,40):
+        print(f"Be careful, it's hot outside, don't forget your sunhat.")
+main()
+
+#5 Bonus:
+
+import random
+def get_random_temp():
+
+
+   season = str(input("Enter name of season: ")).capitalize()
+   if season == "Winter":
+       num = random.uniform(-10.0, 16.0)
+   elif season == "Fall":
+       num = random.uniform(16.0, 23.0)
+   elif season == "Spring":
+       num = random.uniform(24.0, 32.0)
+   elif season == "Summer":
+       num = random.uniform(32.0, 40.0)
+
+   formatted_num = "{:.1f}".format(num)
+   return formatted_num
+
+def main():
+    current_temp = float(get_random_temp())
+    print(f'The temperature right now is {current_temp} degrees Celsius.')
+
+    if current_temp < 0:
+        print(f'Brrr, that’s freezing! Wear some extra layers today.')
+    elif  0 <= current_temp < 16:
+        print(f'Quite chilly! Don’t forget your coat!')
+    elif 16 <= current_temp < 23:
+        print(f'Much better! you CAN forget your coat.')
+
+    elif 24 <= current_temp < 32:
+        print(f'Amazing, enjoy this weather!!!')
+    elif 32 <= current_temp < 40:
+        print(f"Be careful, it's hot outside, don't forget your sunhat.")
+
+main()
+
+
+
+#6 Bonus
+
+def get_random_temp():
+
+    month = int(input("Enter number of month : "))
+    if month == 12 or 1 or 2:
+            num = random.uniform(-10.0, 16.0)
+    elif month == 9 or 10 or 11:
+            num = random.uniform(16.0, 23.0)
+    elif month == 3 or 4 or 5:
+            num = random.uniform(24.0, 32.0)
+    elif month == 6 or 7 or 8:
+        num = random.uniform(32.0, 40.0)
+
+    formatted_num = "{:.1f}".format(num)
+    return (formatted_num)
+
+#another way:
+"""
+make a Dictionary in all year information and connect  with season IF statements  from   #5 Bonus:
+
+
+def get_random_temp():
+    month = int(input("Enter number of month: "))
+
+    year = {
+        'Winter': [12, 1, 2],
+        'Fall': [9, 10, 11],
+        'Spring': [3, 4, 5],
+        'Summer': [6, 7, 8]}
+
+    for key, value in year.items():
+        if month in value:
+            season = key
+
+    if season == "Winter":
+        num = random.uniform(-10.0, 16.0)
+    elif season == "Fall":
+        num = random.uniform(16.0, 23.0)
+    elif season == "Spring":
+        num = random.uniform(24.0, 32.0)
+    elif season == "Summer":
+        num = random.uniform(32.0, 40.0)
+
+    formatted_num = "{:.1f}".format(num)
+    return formatted_num
+"""
+
+
+#  this 'main' function do need chance:
+def main():
+    current_temp = float(get_random_temp())
+    print(f'The temperature right now is {current_temp} degrees Celsius.')
+
+    if current_temp < 0:
+        print(f'Brrr, that’s freezing! Wear some extra layers today.')
+    elif  0 <= current_temp < 16:
+        print(f'Quite chilly! Don’t forget your coat!')
+    elif 16 <= current_temp < 23:
+        print(f'Much better! you CAN forget your coat.')
+
+    elif 24 <= current_temp < 32:
+        print(f'Amazing, enjoy this weather!!!')
+    elif 32 <= current_temp < 40:
+        print(f"Be careful, it's hot outside, don't forget your sunhat.")
+
+main()
+
+#__________________________
+
+
+
+#____  Exercise 8 : Star Wars Quiz__________
+
+data = [
+    {
+        "question": "What is Baby Yoda's real name?",
+        "answer": "Grogu"
+    },
+    {
+        "question": "Where did Obi-Wan take Luke after his birth?",
+        "answer": "Tatooine"
+    },
+    {
+        "question": "What year did the first Star Wars movie come out?",
+        "answer": "1977"
+    },
+    {
+        "question": "Who built C-3PO?",
+        "answer": "Anakin Skywalker"
+    },
+    {
+        "question": "Anakin Skywalker grew up to be who?",
+        "answer": "Darth Vader"
+    },
+    {
+        "question": "What species is Chewbacca?",
+        "answer": "Wookiee"
+    }
+]
+
+
+def Star_Wars_Quiz():
+    correct_counter = 0
+    Incorrect_counter = 0
+    wrong_answers = []
+
+    for i in data:
+        print(i["question"])
+        user_asw = (str(input('Enter your answer:')).capitalize())
+
+        if user_asw == i["answer"]:
+            correct_counter += 1
+            # print("That is correct!!!") # optional (if need to inform ): not said in instructions
+        else:
+            wrong_answers.append({data.index(i): user_asw})
+            Incorrect_counter += 1
+            # print("Sorry, wrong answer.") # optional (if need to inform)
+
+    # 2
+    def correct_incorrect():
+        print(f'Your score is: {correct_counter} correct and {Incorrect_counter} incorrect answers')
+
+    correct_incorrect()
+
+
+# 3 BONUS:
+    for item in wrong_answers:
+        question_index, user_answer = item.popitem()
+        question = data[question_index]["question"]
+        correct_answer = data[question_index]["answer"]
+        print(f'Question: {question}, Your answer: {user_answer}, Correct answer: {correct_answer}')
+
+
+Star_Wars_Quiz()
+
+#_________________________
