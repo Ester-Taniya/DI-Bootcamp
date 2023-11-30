@@ -338,6 +338,8 @@ def Star_Wars_Quiz():
         question = data[question_index]["question"]
         correct_answer = data[question_index]["answer"]
         print(f'Question: {question}, Your answer: {user_answer}, Correct answer: {correct_answer}')
+    if (len(wrong_answers)) > 3:
+        print('Do you want to play again?')
 
 
 Star_Wars_Quiz()
