@@ -1,1 +1,34 @@
+#Challenge 1 : Sorting__________________________________________________________________________
+
+user_str = str(input("Enter comma separated sequence of words:"))
+words_list=user_str.split(',')
+sort_words=sorted(words_list)
+output_sequence = ",".join(sort_words)
+print(output_sequence)
+
+# input: without,hello,bag,world
+# output 
+#_____________________________
+
+
+
+#Challenge 2 : Longest Word__________________________________________________________________________
+
+
+def longest_word(sequence):
+    sequence = sequence.strip(",.")
+    words_list = list(sequence.split(' '))
+
+    #  1 the all logic steap way:
+    for i in words_list:
+        max_length = max(len(word) for word in words_list)
+        if len(i)==max_length:
+            print(i)
+
+    # 2 the short way
+    #max_length_word= max(words_list, key=len)
+   #print(max_length_word)
+
+
+longest_word("Margaret's toy is a pretty doll.")
 
