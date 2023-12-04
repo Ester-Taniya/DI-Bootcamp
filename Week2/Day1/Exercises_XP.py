@@ -73,29 +73,94 @@ else:
 
 
 
-#____  ____________________
+#____ Exercise 3 : Who’s The Song Producer?  _________
+#1
+class Song:
+    def __init__(self, lyrics):
+
+        self.lyrics = lyrics
+        #lyrics=[]
+        
+    #2
+    def sing_me_a_song(self):
+        for line in self.lyrics:
+            print(line)
+
+stairway = Song(["There’s a lady who's sure","all that glitters is gold", "and she’s buying a stairway to heaven"])
+print(stairway.sing_me_a_song())
+
+
+
 #__________________________
 
 
 
-#____  ____________________
+#____Exercise 4 : Afternoon At The Zoo  ________
+#1
+class Zoo:
+    #2
+    def __init__(self, zoo_name):
+
+        self.name = zoo_name
+        self.animals = []
+
+
+    #3
+    def add_animal(self,new_animal):
+        if new_animal not in self.animals:
+            self.animals.append(new_animal)
+
+    # 4
+    def get_animals(self):
+        for animal in self.animals:
+            print(animal)
+    #5
+    def sell_animal(self,animal_sold):
+        if animal_sold in self.animals:
+            self.animals.remove(animal_sold)
+    #6
+    def sort_animals(self):
+        sorted_animals={}
+        for animal in sorted(self.animals):
+            first_letter = animal[0].upper()
+            if first_letter not in sorted_animals:
+                sorted_animals[first_letter] = [animal]
+            else:
+                sorted_animals[first_letter].append(animal)
+        return sorted_animals
+
+    #7
+    def get_groups(self):
+        sorted_animals = self.sort_animals()
+        for key, value in sorted_animals.items():
+            if len(value) == 1:
+                print(f"{key}: {value[0]}")
+            else:
+                print(f"{key}: {value}")
+
+    #8
+
+ramat_gan_safari = Zoo(zoo_name="Ramat Gan Safari")
+
+ramat_gan_safari.add_animal("Giraffe")
+ramat_gan_safari.add_animal("Ape")
+ramat_gan_safari.add_animal("Bear")
+ramat_gan_safari.add_animal("Cougar")
+ramat_gan_safari.add_animal("Cat")
+ramat_gan_safari.add_animal("Emu")
+ramat_gan_safari.add_animal("Eel")
+
+
+ramat_gan_safari.get_animals()
+
+ramat_gan_safari.get_animals()
+
+ramat_gan_safari.sell_animal("Giraffe")
+
+sorted_animals = ramat_gan_safari.sort_animals()
+print(sorted_animals)
+
+ramat_gan_safari.get_groups()
 #__________________________
 
-
-
-
-#____  ____________________
-#__________________________
-
-
-#____  ____________________
-#__________________________
-
-
-
-
-#____  ____________________
-#__________________________
-
-'''_____________________________________________________________________________________________________________________________________'''
 
