@@ -73,23 +73,17 @@ class Dog():
         elif self_run_speed < other_run_speed:
             print(f'{other_dog.name} won the fight!')
         else: print('It a draw!')
+if __name__ == '__main__':
 
 
-
-dog1 = Dog('Rex', 2, 6.5)
-dog2 = Dog('Jack', 7, 12.8)
-dog3 = Dog('Moe', 12, 3.0)
-
-
-print(dog1.name)
-Dog.bark(dog3)
-Dog.fight(dog1,dog2)
+    dog1 = Dog('Rex', 2, 6.5)
+    dog2 = Dog('Jack', 7, 12.8)
+    dog3 = Dog('Moe', 12, 3.0)
 
 
-if __name__ == '__main__ '
+    print(dog1.name)
+    Dog.bark(dog3)
+    Dog.fight(dog1,dog2)
 
-#__________________________
 
-
-'''_____________________________________________________________________________________________________________________________________'''
 
