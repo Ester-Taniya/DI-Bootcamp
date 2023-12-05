@@ -50,37 +50,46 @@ sara_pets.walk()
 
 
 #____Exercise 2 : Dogs _______________
+class Dog():
+    def __init__(self, name, age,weight):
 
+        self.name = name
+        self.age = age
+        self.weight = weight
+
+
+    def bark(self):
+        print(f'{self.name} is barking')
+
+    def run_speed(self):
+        run_speed = self.weight / self.age*10
+        return run_speed
+
+    def fight(self,other_dog):
+        self_run_speed = self.run_speed() * self.weight
+        other_run_speed = other_dog.run_speed() * other_dog.weight
+        if self_run_speed > other_run_speed:
+            print(f'{self.name} won the fight!')
+        elif self_run_speed < other_run_speed:
+            print(f'{other_dog.name} won the fight!')
+        else: print('It a draw!')
+
+
+
+dog1 = Dog('Rex', 2, 6.5)
+dog2 = Dog('Jack', 7, 12.8)
+dog3 = Dog('Moe', 12, 3.0)
+
+
+print(dog1.name)
+Dog.bark(dog3)
+Dog.fight(dog1,dog2)
+
+
+if __name__ == '__main__ 
 
 #__________________________
 
-
-
-
-
-#____  ____________________
-#__________________________
-
-
-
-#____  ____________________
-#__________________________
-
-
-
-
-#____  ____________________
-#__________________________
-
-
-#____  ____________________
-#__________________________
-
-
-
-
-#____  ____________________
-#__________________________
 
 '''_____________________________________________________________________________________________________________________________________'''
 
