@@ -86,7 +86,7 @@ Dog.bark(dog3)
 Dog.fight(dog1,dog2)
 
 
-if __name__ == '__main__ 
+if __name__ == '__main__ '
 
 #__________________________
 
