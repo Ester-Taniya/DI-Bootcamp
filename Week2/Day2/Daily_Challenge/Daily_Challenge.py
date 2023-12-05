@@ -7,6 +7,7 @@ class Pagination():
         self.items = items
         self.pagesize = int(pagesize)
         self.current_page = 1
+        self.total_pages = len(self.items) // self.pagesize
 
     def getVisibleItems(self):
         end_index = self.pagesize * self.current_page
@@ -15,28 +16,34 @@ class Pagination():
         current_page_items = self.items[start_index:end_index]
         return current_page_items
 
-    def nextPage(self):
-        self.current_page += 1
-        return self.current_page
-
     def prevPage(self):
         if self.current_page > 1:
-            self.current_page -= 1
-        return self.current_page
+            prev_page = self.current_page - 1
+        else:
+            prev_page = self.current_page
+        print('No previous pages,It was 1st page')
+        return prev_page
+
+    def nextPage(self):
+        if self.current_page < self.total_pages:
+            next_page = self.current_page + 1
+        else:
+            next_page = self.current_page
+        print('No next pages,It was last page')
+        return next_page
+
+    
 
     def firstPage(self):
         self.current_page = 1
         return self.current_page
 
     def lastPage(self):
-        total_pages = len(self.items) // self.pagesize
-        if len(self.items) % self.pagesize != 0:
-            total_pages += 1
-        self.current_page = total_pages
-        return self.current_page
+        lastPage = self.total_pages
+        return lastPage
 
     def goToPage(self, pageNum):
-        if 1 <= pageNum <= len(self.items) // self.pagesize + 1:
+        if 1 <= pageNum <= self.total_pages:
             self.current_page = pageNum
         return self.current_page
 
