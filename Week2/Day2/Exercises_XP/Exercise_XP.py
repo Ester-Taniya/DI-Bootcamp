@@ -36,7 +36,7 @@ class Siamese(Cat):
 
 #the input/output for ex of the end file  |||
 #                                         VVV
-#__________________________________________________
+#___because of the end file "if __name__ == '__main__':"  statment____________________________
 
 
 
@@ -101,12 +101,34 @@ class Family():
 #_________________________________________________
 
 
+
+
+
+#____Exercise 5 : TheIncredibles Family
+
+class TheIncredibles(Family):
+    def __init__(self, last_name: str):
+        super().__init__(last_name)
+        self.last_name = 'Incredibles'
+        self.members = [
+        {'name':'Michael','age':35,'gender':'Male','is_child':False,'power': 'fly','incredible_name':'MikeFly'},
+        {'name':'Sarah','age':32,'gender':'Female','is_child':False,'power': 'read minds','incredible_name':'SuperWoman'}
+    ]
+        self.last_name = 'Incredibles'
+
+    def use_power(self,first_name):
+        for member in self.members:
+            try:
+                if member['name'] == first_name and member['age'] > 18:
+                    print(f'{first_name}can use power')
+                else: print(f"{first_name}can't use power")
+            except:TypeError
+
+
+
 if __name__ == '__main__':
 
-
-
-
-
+    print(TheIncredibles)
 
 
 
@@ -148,6 +170,9 @@ if __name__ == '__main__':
     print(famili_1.is_18('Michael'))
     print(famili_1.is_18('Timmy'))
 # __________________________________________________
+
+
+
 
 
 
