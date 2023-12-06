@@ -29,13 +29,16 @@ class Chartreux(Cat):
     def sing(self, sounds):
         return f'{sounds}'
 
-#1
+
 class Siamese(Cat):
     def sing(self, sounds):
         return f'{sounds}'
 
+#the input/output for ex of the end file  |||
+#                                         VVV
+#__________________________________________________
 
-#___________________________
+
 
 
 #____Exercise 2 : Dogs _______________
@@ -64,21 +67,69 @@ class Dog():
             print(f'{other_dog.name} won the fight!')
         else: print('It a draw!')
 
+#the input/output for ex of the end file  |||
+#                                         VVV
+#__________________________________________________
+
+
+
+
+#____Exercise 3 : Dogs Domesticated (in a neew file "XP_3.py")
+#__________________________________________________
+
+
+#____Exercise 4 : Family
+class Family():
+    def __init__(self,last_name:str):
+        self.last_name = last_name
+        self.members=[
+        {'name':'Michael','age':35,'gender':'Male','is_child':False},
+        {'name':'Sarah','age':32,'gender':'Female','is_child':False}]
+
+    def born(self, **kwargs):
+        self.members.append(dict(kwargs))
+        print(f"Congratulations! {kwargs['name']} is born into the {self.last_name} family.")
+
+    def is_18(self, first_name):
+        for member in self.members:
+            if member['name'] == first_name and member['age']>18:
+                return True
+
+            else:return False
+#the input/output for ex of the end file  |||
+#                                         VVV
+#_________________________________________________
 
 
 if __name__ == '__main__':
-    cat1 = Bengal('Salem', 11)
+
+
+
+
+
+
+
+
+
+
+
+
+#the input/output for EX1 (Cats)
+    # 1
+    cat1 = Bengal('Salem', 11) #1
     cat2 = Chartreux("Tom", 2)
     cat3 = Siamese('Wiskers', 5)
 
     # 2
-
     all_cats = [cat1, cat2, cat3]
     sara_pets = Pets(all_cats)
 
     # 4
     sara_pets.walk()
+#______________________________________
 
+
+# the input/output for EX1 (Dog)
     dog1 = Dog('Rex', 2, 6.5)
     dog2 = Dog('Jack', 7, 12.8)
     dog3 = Dog('Moe', 12, 3.0)
@@ -86,6 +137,17 @@ if __name__ == '__main__':
     print(dog1.name)
     Dog.bark(dog3)
     Dog.fight(dog1, dog2)
+#______________________________________
+
+
+
+#the input/output for ex4 (Family)
+    famili_1 = Family("Jonson")
+    famili_1.born(name='Timmy',age=0,gender='Male',is_child=True)
+
+    print(famili_1.is_18('Michael'))
+    print(famili_1.is_18('Timmy'))
+# __________________________________________________
 
 
 
