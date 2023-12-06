@@ -34,17 +34,6 @@ class Siamese(Cat):
     def sing(self, sounds):
         return f'{sounds}'
 
-cat1 = Bengal('Salem',11)
-cat2 = Chartreux("Tom",2)
-cat3 = Siamese('Wiskers',5)
-
-#2
-
-all_cats = [cat1, cat2, cat3]
-sara_pets = Pets(all_cats)
-
-#4
-sara_pets.walk()
 
 #___________________________
 
@@ -77,11 +66,22 @@ class Dog():
 
 
 
-dog1 = Dog('Rex', 2, 6.5)
-dog2 = Dog('Jack', 7, 12.8)
-dog3 = Dog('Moe', 12, 3.0)
-
 if __name__ == '__main__':
+    cat1 = Bengal('Salem', 11)
+    cat2 = Chartreux("Tom", 2)
+    cat3 = Siamese('Wiskers', 5)
+
+    # 2
+
+    all_cats = [cat1, cat2, cat3]
+    sara_pets = Pets(all_cats)
+
+    # 4
+    sara_pets.walk()
+
+    dog1 = Dog('Rex', 2, 6.5)
+    dog2 = Dog('Jack', 7, 12.8)
+    dog3 = Dog('Moe', 12, 3.0)
 
     print(dog1.name)
     Dog.bark(dog3)
