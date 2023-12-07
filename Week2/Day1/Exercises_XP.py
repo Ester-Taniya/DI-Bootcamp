@@ -1,4 +1,4 @@
-'''___Exercises XP_____________________________________________________________________________________________________________________________________''''
+'''___Exercises XP_____________________________________________________________________________________________________________________________________'''
 
 #____ Exercise 1: Cats _____
 
@@ -7,19 +7,18 @@ class Cats:
     def __init__(self, cat_name, cat_age):
         self.name = cat_name
         self.age = cat_age
-    def cats_list(selfself, cat_name, cat_age):
-        #return list(cat_name, cat_age)
-        print(list(cat_age,cat_name))
 
 
 cat1 = Cats('Kitty', 3)
 cat2 = Cats('Max', 5)
 cat3 = Cats('Salem', 11)
 
+print(f'There is 3 cats:{cat1.name},{cat2.name} and {cat3.name}')
+
 #2
 def Oldest_cat(*args):
-    oldest_cat = max(args, key=lambda cat: cat.age)
-    return oldest_cat
+    the_oldest_cat = max(args, key=lambda cat: cat.age)
+    return the_oldest_cat
 oldest_cat = Oldest_cat(cat1, cat2, cat3)
 
 #3
@@ -41,7 +40,8 @@ class Dog():
 
     #4
     def jump(self):
-            print(f"{self.name} jumps {self.height} cm high!")
+
+            print(f"{self.name} jumps {self.height*2} cm high!")
 
 #5
 davids_dog=Dog("Rex",50)
@@ -76,18 +76,18 @@ else:
 #____ Exercise 3 : Who’s The Song Producer?  _________
 #1
 class Song:
-    def __init__(self, lyrics):
+    def __init__(self, lyrics: list):
 
         self.lyrics = lyrics
-        #lyrics=[]
-        
+
     #2
     def sing_me_a_song(self):
         for line in self.lyrics:
             print(line)
 
+
 stairway = Song(["There’s a lady who's sure","all that glitters is gold", "and she’s buying a stairway to heaven"])
-print(stairway.sing_me_a_song())
+stairway.sing_me_a_song()
 
 
 
@@ -118,6 +118,9 @@ class Zoo:
     def sell_animal(self,animal_sold):
         if animal_sold in self.animals:
             self.animals.remove(animal_sold)
+            print(f'{animal_sold} haw been sold')
+        else:
+            print(f'sorry no {animal_sold} in the {self.name}')
     #6
     def sort_animals(self):
         sorted_animals={}
