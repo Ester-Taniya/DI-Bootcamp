@@ -1,4 +1,4 @@
-'''___Daily Challenge_____________________________________________________________________________________________________________________________________''''
+'''___Daily Challenge_____________________________________________________________________________________________________________________________________'''
 #1
 class Farm:
     #2
@@ -6,7 +6,8 @@ class Farm:
 
         self.name = name
         self.animals = {}
-    #3 minimum 1 metodh
+
+    #3  need 3 methods
 
 
     #4
@@ -28,6 +29,8 @@ class Farm:
 #Expand The Farm #1
     def get_animal_types(self):
         return sorted(self.animals.keys())
+
+
 #Expand The Farm #2
 
     def get_short_info(self):
