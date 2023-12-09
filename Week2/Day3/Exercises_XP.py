@@ -1,58 +1,58 @@
 '''___Exercises XP_____________________________________________________________________________________________________________________________________''''
 
-#____   _____
+#____Exercise 1: Currencies_____
 class Currency:
-    def ___(self,lable,amount):
-        self.lable =lable
-        self.amount=amount
+    def __init__(self, currency, amount):
+        self.currency = currency
+        self.amount = amount
 
     def __str__(self):
-        return f'{self.amount} {self.lable}'
+        return (f'{self.amount} {self.currency}s')
 
     def __int__(self):
-        return int(self.amount)
+        return (int(self.amount))
+
+    def __repr__(self):
+        return (f'{self.amount} {self.currency}s')
+
     def __add__(self, other):
-        if self.lable== other.lable
-            return  self.amount + other.amount
-        elif type(other)==int:
-            return int(self.amount)+other
-        else:raise TypeError ('Different lables')
+        try: return self.amount + other
+        except: TypeError ("Different currency")
+        if self.currency == other.currency:
+            return self.amount+other.amount
+        else: return (f"Cannot add between Currency type {self.currency} and {other.currency}")
+
+    def __iadd__(self, other):
+        if type(self.amount)==type(other):
+            self.amount += other
+            return self
+        elif self.currency==other.currency:
+            self.amount += other.amount
+            return self
+        raise TypeError (f"Cannot add between Currency type {self.currency} and {other.currency}")
 
 
 c1 = Currency('dollar', 5)
 c2 = Currency('dollar', 10)
 c3 = Currency('shekel', 1)
 c4 = Currency('shekel', 10)
-"""
-'''
-str(c1)
-# '5 dollars'
 
-int(c1)
-# 5
 
->>> repr(c1)
-# '5 dollars'
+print(str(c1))
+print(int(c1))
+print(repr(c1))
+print(c1 +5)
+print(c1 + c2)
+#print(c1+c3) # check
 
->>> c1 + 5
-# 10
+print(c1)
+c1 += 5
+print(c1)
 
->>> c1 + c2
-# 15
+c1 += c2
+print(c1)
 
->>> c1 
-# 5 dollars
-
->>> c1 += 5
->>> c1
-# 10 dollars
-
->>> c1 += c2
->>> c1
-# 20 dollars
-
->>> c1 + c3
-# TypeError: Cannot add between Currency type <dollar> and <shekel>
+print(c1 + c3)
 
 #___________________________
 
