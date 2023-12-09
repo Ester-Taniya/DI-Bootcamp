@@ -80,11 +80,9 @@ class Dog():
 
 #____Exercise 4 : Family
 class Family():
-    def __init__(self,last_name:str):
+    def __init__(self,last_name:str, members:list):
         self.last_name = last_name
-        self.members=[
-        {'name':'Michael','age':35,'gender':'Male','is_child':False},
-        {'name':'Sarah','age':32,'gender':'Female','is_child':False}]
+        self.members = members
 
     def born(self, **kwargs):
         self.members.append(dict(kwargs))
@@ -94,8 +92,13 @@ class Family():
         for member in self.members:
             if member['name'] == first_name and member['age']>18:
                 return True
-
             else:return False
+
+    def family_presentation(self):
+        print(f'Family {self.last_name}:')
+        for member in self.members:
+            print(', '.join([f'{key}: {value}' for key, value in member.items()]))
+
 #the input/output for ex of the end file  |||
 #                                         VVV
 #_________________________________________________
@@ -105,30 +108,33 @@ class Family():
 
 
 #____Exercise 5 : TheIncredibles Family
-
 class TheIncredibles(Family):
-    def __init__(self, last_name: str):
-        super().__init__(last_name)
-        self.last_name = 'Incredibles'
-        self.members = [
-        {'name':'Michael','age':35,'gender':'Male','is_child':False,'power': 'fly','incredible_name':'MikeFly'},
-        {'name':'Sarah','age':32,'gender':'Female','is_child':False,'power': 'read minds','incredible_name':'SuperWoman'}
-    ]
-        self.last_name = 'Incredibles'
+    def __init__(self, last_name, members):
+        super().__init__(last_name, members)
 
-    def use_power(self,first_name):
+    def use_power(self, first_name):
         for member in self.members:
-            try:
-                if member['name'] == first_name and member['age'] > 18:
-                    print(f'{first_name}can use power')
-                else: print(f"{first_name}can't use power")
-            except:TypeError
+            if member['name'] == first_name:
+                if self.is_18(first_name):
+                    print(f'{first_name} can use power')
+                else:
+                    print(f"{first_name} can't use power because they are not 18 yet.")
+                return
 
+        print(f'No members with name {first_name} in {self.last_name} Family')
+
+    def incredible_presentation(self):
+        print(f"*Here is our powerful family*")
+        super().family_presentation()
+
+#the input/output for ex of the end file  |||
+#                                         VVV
+#_________________________________________________
 
 
 if __name__ == '__main__':
 
-    print(TheIncredibles)
+
 
 
 
@@ -164,15 +170,24 @@ if __name__ == '__main__':
 
 
 #the input/output for ex4 (Family)
-    famili_1 = Family("Jonson")
-    famili_1.born(name='Timmy',age=0,gender='Male',is_child=True)
-
-    print(famili_1.is_18('Michael'))
-    print(famili_1.is_18('Timmy'))
+    family_1=Family('Jonson',[{'name':'Michael','age':35,'gender':'Male','is_child':False},{'name':'Sarah','age':32,'gender':'Female','is_child':False}])
+    family_1.born(name='Timmy',age=0,gender='Male',is_child=True)
+    print(family_1.is_18('Michael'))
+    print(family_1.is_18('Timmy'))
+    family_1.family_presentation()
 # __________________________________________________
 
 
 
+#the input/output for ex5 (Family)
+
+    incredibles_family = TheIncredibles("Incredibles", [{'name': 'Michael', 'age': 35, 'gender': 'Male', 'is_child': False, 'power': 'fly', 'incredible_name': 'MikeFly'},{'name': 'Sarah', 'age': 32, 'gender': 'Female', 'is_child': False, 'power': 'read minds', 'incredible_name': 'SuperWoman'}])
+
+    incredibles_family.use_power('Ron')
+    incredibles_family.use_power('Michael')
+    incredibles_family.incredible_presentation()
+    incredibles_family.born(name='Baby Jack', age=0, gender='Male', is_child= True, power='Unknown Power', incredible_name='Baby Jack')
+    incredibles_family.incredible_presentation()
 
 
-
+# __________________________________________________
