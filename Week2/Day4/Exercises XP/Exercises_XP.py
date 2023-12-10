@@ -1,6 +1,9 @@
 '''___Exercises XP_____________________________________________________________________________________________________________________________________'''
 
 #____Exercise 1 – Random Sentence Generator   _____
+def get_words_from_file(sowpods.txt)
+with open file(sowpods.txt )
+
 
 #___________________________
 
