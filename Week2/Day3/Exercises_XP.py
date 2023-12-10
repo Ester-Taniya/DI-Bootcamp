@@ -1,4 +1,4 @@
-'''___Exercises XP_____________________________________________________________________________________________________________________________________''''
+'''___Exercises XP_____________________________________________________________________________________________________________________________________'''
 
 #____Exercise 1: Currencies_____
 class Currency:
@@ -57,35 +57,102 @@ print(c1 + c3)
 #___________________________
 
 
-#____  ____________________
+#____ Exercise 2: Import ____________________
+from func import add_func as fn
+ 
+print(fn(1,2))
+
 #__________________________
 
 
 
 
 
-#____  ____________________
+#____Exercise 3: String Module___________________
+
+
+import random
+import string
+
+def generate_random_string(length=5):
+    letters = string.ascii_letters
+    random_string=''.join(random.choice(letters) for _ in range(length))
+    return random_string
+
+result = generate_random_string()
+print(result)
+
+
 #__________________________
 
 
 
-#____  ____________________
+#____ Exercise 4 : Current Date ____________________
+
+from datetime import datetime
+
+def display_current_date():
+    current_date = datetime.now()
+    print(f"Current Date : {current_date}")
+
+
+display_current_date()
 #__________________________
 
 
 
 
-#____  ____________________
+
+#____Exercise 5 : Amount Of Time Left Until January 1st  ____________________
+from datetime import datetime, timedelta
+
+def time_until_january_1st():
+    current_date = datetime.now()
+    jan_1st=datetime(current_date.year+1,1,1)
+    time_left = jan_1st - current_date
+    days_left= time_left.days
+    hours_left, remainder = divmod(time_left.seconds, 3600)
+    minutes_left, seconds_left = divmod(remainder, 60)
+    print(f" Until 1st of January is in {days_left} days and {hours_left:02}:{minutes_left:02}:{seconds_left:02} hours.")
+time_until_january_1st()
+
 #__________________________
 
 
-#____  ____________________
+#____Exercise 6 : Birthday And Minutes  ____________________
+import datetime
+
+def minutes_lived(birthdate):
+    import datetime
+
+    birthdate = datetime.datetime.strptime(birthdate, "%d-%m-%Y")
+    current_date = datetime.datetime.now()
+    time_lived = current_date - birthdate
+
+    minutes_lived = time_lived.total_seconds() / 60
+
+    print(f"You have lived {int(minutes_lived)} minutes.")
+
+birthdate_input = input("Enter your birthdate (DD-MM-YYYY): ")
+minutes_lived(birthdate_input)
 #__________________________
 
 
 
 
-#____  ____________________
+#____Exercise 7 : Faker Module  ____________________
+from faker import Faker
+fake = Faker()
+users = []
+
+def add_user():
+    user = {'name': fake.name(), 'address': fake.address(), 'language_code': fake.language_code()}
+    users.append(user)
+
+for i in range(5):
+    add_user()
+    for u in users:
+        print(u)
 #__________________________
 
 '''_____________________________________________________________________________________________________________________________________'''
