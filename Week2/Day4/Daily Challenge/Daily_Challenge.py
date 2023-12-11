@@ -8,6 +8,7 @@ class Text():
         self.text= text
 
 def frequency(self):
+    
     pass
 
 def  most_common_word():

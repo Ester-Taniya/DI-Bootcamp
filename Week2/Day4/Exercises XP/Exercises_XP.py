@@ -1,27 +1,35 @@
 '''___Exercises XP_____________________________________________________________________________________________________________________________________'''
 
 #____Exercise 1 – Random Sentence Generator   _____
-def get_words_from_file(sowpods.txt)
-with open file(sowpods.txt )
+
+def get_words_from_file():
+    with open('sowpods1.txt', 'r') as file:
+        text = file.read().split()
+    print(text)
+get_words_from_file()
 
 
-#___________________________
 
 
-#____Exercise 2: Working With JSON  ____________________
-import json
-sampleJson = """{ 
-   "company":{ 
-      "employee":{ 
-         "name":"emma",
-         "payable":{ 
-            "salary":7000,
-            "bonus":800
-         }
-      }
-   }
-}"""
-#__________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
