@@ -4,7 +4,7 @@ import os
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 class AnagramChecker():
-    def __init__(self,file_name) -> None:
+    def __init__(self,file_name) :
         with open(dir_path + file_name, 'r') as file:
             self.words = file.read().split()
         return (self.words)
