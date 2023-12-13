@@ -1,0 +1,5 @@
+DB_name=esncjsmy
+DB_user=esncjsmy
+DB_password=T9AsUvRYHz1765d_shU6DY9jY8hYu6QX
+DB_host=bubble.db.elephantsql.com
+DB_port=5432
