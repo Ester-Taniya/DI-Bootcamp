@@ -9,7 +9,8 @@ def main():
             
             if user_input=='x':
                 pass
-            elif user_input.isalpha():
+            elif user_input.isalpha(): # it will check if input have any characters besides letters
+                ## if input have 2 words it means slesh (filtered by .isalfa() )
                 sowpods_checker.get_anagrams(user_word)
             else:
                 print('Sorry, invalid input.')
