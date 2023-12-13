@@ -10,16 +10,13 @@ class AnagramChecker():
 
     def is_valid_word(self, user_word):
         self.user_word = user_word.lower()
-        #print(self.user_word)
         if self.user_word in self.words:
-            #print(f'The word "{self.user_word}" is real!')
-            return self.user_word
-        else: #print(f'Sorry, the word "{self.user_word}" is not real.')
-            return None
+           return self.user_word
+        else: return None
 
-    def is_anagram(self,word):
+    def get_anagrams(self,word):
         word = self.is_valid_word(word)
-        if word ==None:
+        if word is None:
             print(f'Sorry, the word "{self.user_word}" is not real.')
         else:
             anagrams = [words for words in self.words if sorted(words) == sorted(word)]
@@ -27,16 +24,20 @@ class AnagramChecker():
         
 
 
+if __name__ == "__main__":
+
+ 
+    '''
+    sowpods_checker = AnagramChecker('/sowpods.txt')
+    print(sowpods_checker.words)
+    sowpods_checker.is_valid_word('zymoid')
+    sowpods_checker.is_valid_word('zymoif')
+    sowpods_checker.is_valid_word('meat')
+    sowpods_checker.get_anagrams('meit')
+    sowpods_checker.get_anagrams('meat')
+    '''
 
     
-
-sowpods_checker = AnagramChecker('/sowpods.txt')
-#print(sowpods_checker.words)
-sowpods_checker.is_valid_word('zymoid')
-sowpods_checker.is_valid_word('zymoif')
-sowpods_checker.is_valid_word('meat')
-sowpods_checker.is_anagram('meit')
-sowpods_checker.is_anagram('meat')
 
 '''_____________________________________________________________________________________________________________________________________'''
 
