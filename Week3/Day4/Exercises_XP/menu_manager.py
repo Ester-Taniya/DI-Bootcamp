@@ -18,7 +18,7 @@ class MenuManager:
         if row:
             print(row[0][1], row[0][2])
         else:
-            print("Item not found.")
+            print("Item not found.1")
 
     @classmethod
     def all_items(cls):
@@ -29,8 +29,7 @@ class MenuManager:
             print(list(row))
         
 
-item=MenuManager(1)
-item.get_by_name('test3')
+
 
    
 

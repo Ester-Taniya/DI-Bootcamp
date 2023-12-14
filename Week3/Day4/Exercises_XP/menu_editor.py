@@ -64,7 +64,7 @@ while True:
         if item is not None:
             print(f"{item.item_name} - ${item.item_price}")
         else:
-            print("Item not found.")
+            print("Item not found!.")
 
     elif choice == "A":
         add_item_to_menu()
