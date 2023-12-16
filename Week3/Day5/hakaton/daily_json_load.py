@@ -15,9 +15,7 @@ def fetch_and_save_data():
     response = requests.get(url, params=params)
 
     if response.status_code == 200:
-        #  name generator
-        current_date = datetime.now().strftime("%Y-%m-%d")
-        filename = f"data_{current_date}.json"
+        filename = "data_.json"
 
         #  new file saver
         with open(filename, 'w', encoding='utf-8') as file:
@@ -26,8 +24,11 @@ def fetch_and_save_data():
     else:
         print(f"Error {response.status_code}: Unable to fetch data.")
 
+
+
+
 # run function in  23:59
-schedule.every().day.at("23:59").do(fetch_and_save_data)
+schedule.every().day.at("21:17").do(fetch_and_save_data)
 
 # unending  cycle:
 while True:
