@@ -31,7 +31,7 @@ def fetch_and_save_data():
         print(response.text)  # Print the response content for debugging
 
 # Schedule to run at 23:59 every day
-schedule.every().day.at("23:59").do(fetch_and_save_data)
+schedule.every().day.at("22:20").do(fetch_and_save_data)
 
 # Unending cycle
 while True:
