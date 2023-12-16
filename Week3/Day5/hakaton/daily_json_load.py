@@ -28,7 +28,7 @@ def fetch_and_save_data():
 
 
 # run function in  23:59
-schedule.every().day.at("21:17").do(fetch_and_save_data)
+schedule.every().day.at("21:20").do(fetch_and_save_data)
 
 # unending  cycle:
 while True:
