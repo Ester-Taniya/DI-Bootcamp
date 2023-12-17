@@ -51,8 +51,15 @@ def main():
             # Use a context manager for handling the database connection
             with conn.cursor() as cursor:
                 cursor.execute(
-                    "INSERT INTO alerts (ID, City, Time) VALUES (%s, %s, %s)",
+                    "INSERT INTO alerts (id, city, time) VALUES (%s, %s, %s)",
                     (self.ID, self.City, self.Time),
+                )
+                conn.commit()
+
+
+        def update():
+            with conn.cursor as cursor:
+                cursor.execute('UPDATE alertsS ET city_id = city.city_id FROM city WHERE alerts.city = city.hb_name AND alerts.city_id IS NULL;'
                 )
                 conn.commit()
 
@@ -84,9 +91,12 @@ def main():
                     City = city.split(' -')[0]
                     Time = alert['time']
                     item = AlertItem(ID, City, Time)
-                    item.save()
+                    item.save() 
+                    item.update()
 
     conn.close()
+
+    
 
 
 
