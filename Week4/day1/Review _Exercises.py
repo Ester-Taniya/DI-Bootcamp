@@ -1,6 +1,7 @@
 
 
 #1. Write code that gets three words from a user and inputs them into a sentence using F-Strings.
+#made a function by mistake, added nofunction semple:
 
 def gets_three_words():
     w_list=[]
@@ -9,7 +10,15 @@ def gets_three_words():
         w_list.append(word)
     sentence=f"{w_list[0]} {w_list[1]} {w_list[2]}!"
     print(sentence)
-#gets_three_words() #to run func
+gets_three_words() #to run func
+
+# without func:
+_____________________
+word1=input("enter you 1st word:")
+word2=input("enter you 2nd word:")
+word3=input("enter you 3rd word:")
+sentence=f"{word1} {word2} {word3}!"
+print(sentence)
 
 
 #2. Exercise: Write a list that contains 2 strings. Print the second string in uppercase and then the first string backwards.
