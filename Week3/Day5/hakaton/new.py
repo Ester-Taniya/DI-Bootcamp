@@ -1,30 +1,16 @@
-from datetime import datetime
-from DB_conect import get_db_connection
+# Greeting the user
+print("Hello! Welcome to the Alert Predictor!")
+print("DISCLAIMER: This program provides the probability of an air raid based on alarm history.")
+print("ALL INFORMATION IS ADVISORY.")
 
-class AlertItem:
-    def __init__(self, ID, City, Time):
-        self.ID = ID
-        self.City = City
-        self.Time = Time
-
-    def save(self):
-        # Get a database connection
-        conn = get_db_connection()
-
-        # Use a context manager for handling the database connection
-        with conn.cursor() as cursor:
-            cursor.execute(
-                "INSERT INTO alerts (id, city, time) VALUES (%s, %s, %s)",
-                (self.ID, self.City, self.Time),
-            )
-            conn.commit()
-
-        # Close the connection
-        conn.close()
-        
-
-# Example usage
-item = AlertItem(223456, 'אילון', "2023-12-16 13:17:00")
-item.save()
+# Asking for the city name
+city_name = input("Enter the name of your city: ")
 
 
+
+# Displaying a greeting using the entered city
+print(f"Hello! You entered the city {city_name}.")
+
+
+
+pip3 install --upgrade python==3.12
