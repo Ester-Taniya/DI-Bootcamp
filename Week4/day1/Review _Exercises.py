@@ -9,7 +9,7 @@ def gets_three_words():
         w_list.append(word)
     sentence=f"{w_list[0]} {w_list[1]} {w_list[2]}!"
     print(sentence)
-#gets_three_words()
+#gets_three_words() #to run func
 
 
 #2. Exercise: Write a list that contains 2 strings. Print the second string in uppercase and then the first string backwards.
@@ -27,3 +27,34 @@ while number <20:
     number += 1
     
 #9. Exercise: Write a loop to print every odd number between 1 and 20
+
+number = 10
+while number <20:
+    if number % 2 !=0:
+        print(number)
+    number += 1
+
+#Functions
+
+#13 Exercise: Write a function that takes a string as input and prints its length:
+
+
+def length_func():
+    user_input= input('Enter your string : ')
+    length=len(user_input)
+    print(length)
+length_func()
+
+
+#14. Exercise: Define a function that takes three numbers and prints their average
+
+def gets_sum():
+    num_list=[]
+    while len(num_list) < 3:
+        num = int(input("enter you number:"))
+
+        num_list.append(num)
+    result=sum(num_list)
+    print(result)
+gets_sum()
+
