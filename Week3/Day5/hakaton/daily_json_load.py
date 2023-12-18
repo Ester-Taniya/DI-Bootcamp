@@ -43,6 +43,7 @@ def main():
     #ADD DATA  SET  TO DB
     class AlertItem:
         def __init__(self, ID, City, Time):
+            global cursor
             self.ID = ID
             self.City = City
             self.Time = Time
@@ -92,13 +93,15 @@ def main():
                     Time = alert['time']
                     item = AlertItem(ID, City, Time)
                     item.save() 
+                    print('data saved')
                     item.update()
-
+    cursor.close()
     conn.close()
 
     
+main()
 
-
+'''
 
 # Schedule to run functions at 23:59 every day:
 schedule.every().day.at("23:59").do(main)
@@ -107,4 +110,4 @@ schedule.every().day.at("23:59").do(main)
 # Unending cycle
 while True:
     schedule.run_pending()
-    time.sleep(1)
+    time.sleep(1)'''
