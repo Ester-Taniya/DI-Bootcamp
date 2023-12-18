@@ -29,23 +29,26 @@ else:
 
 city_check = City(city_name, city_id, time)
 
-try:
-    total_alerts_in_hour = city_check.all_alerts_in_cities()
-    city_hour_alerts = city_check.hour_alerts_in_city()
+total_alerts_in_hour = city_check.all_alerts_in_cities()
+city_hour_alerts = city_check.hour_alerts_in_city()
 
+
+if total_alerts_in_hour == 0:
+    print("No historical data available for the selected hour.")
+else:
     percentage_alerts_outcomes = (city_hour_alerts / total_alerts_in_hour) * 100
 
-    if 10 < percentage_alerts_outcomes < 30:
-        print("It will be a pretty good hour.")
-    elif 30 < percentage_alerts_outcomes < 50:
-        print("It will be quite a quiet hour.")
-    elif 50 < percentage_alerts_outcomes < 70:
-        print("There is a possibility of an air raid.")
-    else:
-        print("Be careful, maybe you should consider staying home.")
-except Exception as e:
-    print(f"An error occurred: {e}")
-finally:
+
+
+if 10 < percentage_alerts_outcomes < 30:
+    print("It will be a pretty good hour.")
+elif 30 < percentage_alerts_outcomes < 50:
+    print("It will be quite a quiet hour.")
+elif 50 < percentage_alerts_outcomes < 70:
+    print("There is a possibility of an air raid.")
+else:
+    print("Be careful, maybe you should consider staying home.")
+
     city_check.conn.close()
 
  
