@@ -69,14 +69,15 @@ for entry in formatted_data:
     for alert in entry['alerts']:
         for city in alert['cities']:
             # Filter data only for the current date
-            if alert['time'][:10] == datetime.now().strftime("%Y-%m-%d"):
+    
                 ID = entry['id']
                 City = city.split(' -')[0]
                 Time = alert['time']
                 item = AlertItem(ID, City, Time)
-                item.save()
-                print('Data saved')
-                item.update()
+                #item.save()
+                #print('Data saved')
+                print(f'({ID}, "{City}", "{Time}"),')
+                #item.update()
 
 # Close the database connection
 cursor.close()
