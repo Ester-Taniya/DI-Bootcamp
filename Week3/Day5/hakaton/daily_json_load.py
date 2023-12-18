@@ -60,7 +60,7 @@ def main():
 
         def update():
             with conn.cursor as cursor:
-                cursor.execute('UPDATE alertsS ET city_id = city.city_id FROM city WHERE alerts.city = city.hb_name AND alerts.city_id IS NULL;'
+                cursor.execute('UPDATE alerts SET city_id = city.city_id FROM city WHERE alerts.city = city.hb_name AND alerts.city_id IS NULL;'
                 )
                 conn.commit()
 
@@ -101,7 +101,6 @@ def main():
     
 main()
 
-'''
 
 # Schedule to run functions at 23:59 every day:
 schedule.every().day.at("23:59").do(main)
@@ -110,4 +109,4 @@ schedule.every().day.at("23:59").do(main)
 # Unending cycle
 while True:
     schedule.run_pending()
-    time.sleep(1)'''
+    time.sleep(1)
