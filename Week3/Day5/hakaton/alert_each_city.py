@@ -15,7 +15,8 @@ class City:
 
             row = cursor.fetchall()
             if row:
-                return(row[0][0])
+                city_id = row[0][0]
+                return(city_id)
             else:
                 return None #("Item not found")
 
@@ -24,8 +25,16 @@ class City:
         with self.conn.cursor() as cursor:
             cursor.execute(
                 "SELECT en_name FROM city WHERE en_name  like %s%", (self.en_name[0],))
+                
+            row = cursor.fetchall()
+            if row:
+                list_cities = row
+                return(list_cities)
+            else:
+                return None #("Item not found")
             
-
+    def  all_alerts_in_city():
+        
             row = cursor.fetchall()
             if row:
                 return(row)
