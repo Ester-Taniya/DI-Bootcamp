@@ -1,5 +1,6 @@
 from DB_conect import get_db_connection
 
+
 class City:
     def __init__(self, en_name, city_id, time):
         self.en_name = en_name
@@ -48,16 +49,4 @@ class City:
                 return None
 
 if __name__ == "__main__":
-    
-
-
-
-
-                    
-
-
-
-
-
-
-
+    citi1=City('Haifa',0,0)
