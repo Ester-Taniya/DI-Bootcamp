@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript-Enhanced HTML Page</title>
+</head>
+<body>
+
+    <h1 id="dynamicHeading">JavaScript-enhanced HTML Page</h1>
+
+    <p>This page has been enhanced with JavaScript</p>
+    <p> to dynamically modify the content</p>
+
+
+    <h2>Features:</h2>
+    <ul>
+        <li>Headings</li>
+        <li>Paragraphs</li>
+        <li>List</li>
+    </ul>
+
+    <script>
+        // JavaScript to dynamically modify the content on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            var dynamicHeading = document.getElementById('dynamicHeading');
+            dynamicHeading.textContent = 'JavaScript Modified This Heading!';
+        });
+    </script>
+
+</body>
+</html>
