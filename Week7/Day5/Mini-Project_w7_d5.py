@@ -1,40 +1,49 @@
-from selenium.webdriver.support.ui import WebDriverWait
-import pandas as pd
 from selenium import webdriver
-from bs4 import BeautifulSoup
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import pprint
+import pandas as pd
 
-
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument('--headless')
-driver = webdriver.Chrome(options=chrome_options)
-
-url = "https://www.inmotionhosting.com/"
+# Initialize the WebDriver
+driver = webdriver.Chrome()
+url = "https://www.inmotionhosting.com"
 driver.get(url)
 
-wait = WebDriverWait(driver, 10)
+# Wait for plan elements to be present
+wait = WebDriverWait(driver, 30)
+plan_elements = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'compare-1')))
 
-page_source = driver.page_source
+child_values = []
 
+# Loop through parent elements to extract child elements
+for parent_element in plan_elements:
+    child_elements = parent_element.find_elements(By.CLASS_NAME, 'imh-rostrum-card')
+    child_values.extend([c.text for c in child_elements])
 
+# Initialize lists to store plan information
+plan_names, descriptions, prices = [], [], []
 
-soup = BeautifulSoup(driver.page_source, 'html.parser')
-plans = soup.find_all('div', class_='plan-details')
+# Loop through child values to extract plan information
+for p in child_values:
+    p = p.split('\n')
+    if p[0] == 'NEW':
+        plan_names.append(p[1])
+        descriptions.append(p[2])
+        prices.append(p[4])
+    else:
+        plan_names.append(p[0])
+        descriptions.append(p[1])
+        prices.append(p[3])
 
+# Create a dictionary from the lists
+plan_dict = {'plan_name': plan_names, 'description': descriptions, 'price': prices}
 
-data = []
-for plan in plans:
-    plan_name = plan.find('h2').text.strip() 
-    features = plan.find('ul').text.strip()  
-    price = plan.find('span', class_='price').text.strip()  
+# Create a Pandas DataFrame from the dictionary
+df = pd.DataFrame(plan_dict)
 
-    data.append({
-        'Plan Name': plan_name,
-        'Features': features,
-        'Price': price
-    })
+# Print the DataFrame
+print(df)
 
-df = pd.DataFrame(data)
-df.to_csv('hosting_plans.csv', index=False)
+# Close the WebDriver
 driver.quit()
-
-print('Data scraping completed and saved to hosting_plans.csv')
